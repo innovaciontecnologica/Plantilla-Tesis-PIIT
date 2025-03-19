@@ -713,12 +713,12 @@ Eléctrica}
       para obtener el título de \\
       \vspace*{48pt}
       {\bf\expandafter\uppercase\expandafter{\@degree}} \\
-      \vspace*{48pt}
+      \vfill
       \small{Directores de tesis: \\ 
-      \@advisortitle\ \@advisorname , 
-      \@gradosegundoasesor\ \@nombresegundoasesor\ y 
-      \@gradotercerasesor\ \@nombretercerasesor}\\
-      \vfill    
+      \@advisortitle\ \@advisorname\ \\ 
+      \@gradosegundoasesor\ \@nombresegundoasesor\ \\
+      \@gradotercerasesor\ \@nombretercerasesor\ }\\
+      \vspace*{16pt}
       \small{UNIDAD ACADÉMICA DE INGENIERÍA ELÉCTRICA \\
       \vspace*{8pt}
       Zacatecas, Zac.,} \@date \\
@@ -745,6 +745,21 @@ Eléctrica}
 }
 
 \def\endresumen{\vfill \hfill\par\newpage}
+
+%=============================================================================
+% ABSTRACT (En español)
+%=============================================================================
+
+\def\abstract{
+\addcontentsline{toc}{chapter}{Abstract}
+             \thispagestyle{empty}
+                \begin{center}
+                  \expandafter\uppercase\expandafter{\Large\bf{Abstract}}
+                  \vspace{12pt}
+                \end{center}
+}
+
+\def\endabstract{\vfill \hfill\par\newpage}
 
 %=============================================================================
 % PAGE STYLES

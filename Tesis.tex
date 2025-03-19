@@ -67,7 +67,7 @@
 % % Grado y nombre de asesores de tesis:
 \advisortitle{Grado} \advisorname{Asesor} 
 \gradosegundoasesor{Grado} \nombresegundoasesor{Asesor}
-\gradotercerasesor{Grado} \nombretercerasesor{Asesor}
+\gradotercerasesor{Grado} \nombretercerasesor{Asesor} % Si no hay tercer asesor, dejar en blanco
 
 \date{\the\year{}}
 
@@ -86,14 +86,18 @@
   \input{01_Resumen.tex}          
 \end{resumen}
 
+\begin{abstract}
+  \input{02_Abstract.tex}          
+\end{abstract}
+
 % % Genera página de dedicatoria
 \begin{dedicatoria}
-  \input{02_Dedicatoria}          
+  \input{03_Dedicatoria}          
 \end{dedicatoria}
 
  % Genera página de agradecimientos
 \begin{agradecimientos}
-  \input{03_Agradecimientos}        
+  \input{04_Agradecimientos}        
 \end{agradecimientos}
 
 % % Genera páginas del contenido general y lista de figuras y tablas
@@ -102,15 +106,15 @@
 \listoftables                  
 
 \begin{nomenclatura}
-    \input{04_Nomenclatura}
+    \input{05_Nomenclatura}
 \end{nomenclatura}
 
 \begin{listofsymbols}
-    \input{05_Simbolos}
+    \input{06_Simbolos}
 \end{listofsymbols}
 
 \begin{glosario}
-   \input{06_Glosario}
+   \input{07_Glosario}
 \end{glosario}
 
 % %--------INCLUSIÓN DE LOS ARCHIVOS (CAPÍTULOS) DEL DOCUMENTO--------
