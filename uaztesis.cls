@@ -27,8 +27,6 @@ sorting=nyt
 ]{biblatex}
 \addbibresource{Referencias.bib}
 
-
-
 %=============================================================================
 % Tamaño de papel
 %=============================================================================
@@ -1092,7 +1090,7 @@ Eléctrica}
   \def\@chapnumber{Apéndice\ \thechapter:}
   \let\@chapterhead\@appendiceschapterhead
   \let\@schapterhead\@apendiceschapterhead
-  \if@bibpresent\relax \else \separatorpage{}\fi % This
+  % \if@bibpresent\relax \else \separatorpage{}\fi % This
   % is a dirty fix.  For some reason, the TOC isn't
   % properly written unless the simple chapter with
   % sections is written.  The bibliography fixes this
