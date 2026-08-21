@@ -3,9 +3,8 @@
 % ==================================================================
 % -----------DECLARACIÓN DE TIPO DE DOCUMENTO A DISEÑAR-------------
 \documentclass[12pt]{uaztesis}
-% % --------------DECLARACIÓN DE PAQUETES A UTILIZAR------------------
+% --------------DECLARACIÓN DE PAQUETES A UTILIZAR------------------
 \usepackage[spanish,mexico]{babel}
-\usepackage{subfigure}
 \usepackage{subcaption}
 \usepackage{multirow,rotating}
 \usepackage[hidelinks]{hyperref}
@@ -13,13 +12,13 @@
 \usepackage{float}
 \usepackage{fancyhdr}
 \usepackage{listings}
-\usepackage{amssymb,amsmath,ams fonts}
+\usepackage{amssymb,amsmath,amsfonts}
 \usepackage{tabularx,colortbl,xspace,rotating,booktabs,longtable,multirow}
-\usepackage{soulutf8}
-\usepackage{multirow} % para las tablas
-\usepackage{longtable} % para tablas largas
-\usepackage{multirow, array} % para las tablas
-\usepackage{float} % para usar [H]
+\usepackage{soul}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{multirow,array}
+\usepackage{float}
 \usepackage{color,curves}
 \usepackage{chngcntr}
 \usepackage{minted}
@@ -30,7 +29,8 @@
 \usetikzlibrary{shapes, shapes.geometric, arrows, arrows.meta, positioning, shadows, decorations.pathreplacing,decorations.text, fit, backgrounds,chains}
 \usepackage{float}
 \usepackage{amsmath}
-\usepackage{pgfplots}
+\usepackage{pgfplots} 
+\pgfplotsset{compat=1.18}
 \usepackage{xcolor}
 \usepackage{etoolbox}
 \usepackage{threeparttable}
@@ -46,16 +46,16 @@
 \definecolor{celesteU}{RGB}{52, 152, 219}
 \renewcommand\listingscaption{C\'odigo}
 \numberwithin{listing}{chapter}
-% % --DECLARACIÓN DE RUTA DE CARPETA DONDE SE ENCUENTRAN LAS FIGURAS--
+% --DECLARACIÓN DE RUTA DE CARPETA DONDE SE ENCUENTRAN LAS FIGURAS--
 \graphicspath{{Imagenes/}}
 \psfull
-% % --------------DECLARACIÓN DEL ESTILO DE PÁGINA--------------------
+% --------------DECLARACIÓN DEL ESTILO DE PÁGINA--------------------
 \pagestyle{thesis}
 \noappendixtables
 \noappendixfigures
-% % ===================================================================
-% % INICIA EL CONTENIDO DEL DOCUMENTO
-% % ===================================================================
+% ===================================================================
+% INICIA EL CONTENIDO DEL DOCUMENTO
+% ===================================================================
 \begin{document}
 \sloppy
 % \thesism % Tesis de maestria
@@ -66,7 +66,7 @@
  \hyphenation{}
 % Declaración de número de páginas en números Romanos
  \clearpage\pagenumbering{roman}
-% % ------------------INTRODUCCIÓN DE DATOS----------------------------
+% ------------------INTRODUCCIÓN DE DATOS----------------------------
 % Título de la tesis, autor, y grado a recibir:
 \title{Título de la tesis} 
 \author{Estudiante}
@@ -75,7 +75,7 @@
 \gradosegundoasesor{Grado} \nombresegundoasesor{Asesor}
 \gradotercerasesor{Grado} \nombretercerasesor{Asesor} % Si no hay tercer asesor, dejar en blanco
 \date{\the\year{}}
-% % ---------GENERACIÓN DE PÁGINAS PRELIMINARES DEL DOCUMENTO----------
+% ---------GENERACIÓN DE PÁGINAS PRELIMINARES DEL DOCUMENTO----------
 % Genera página de presentación
  \maketitle
 % Se incluyen los documentos de parte del posgrado
@@ -97,27 +97,27 @@
 \begin{agradecimientos}
   \input{04_Agradecimientos}        
 \end{agradecimientos}
-% % Genera páginas del contenido general y lista de figuras y tablas
+% Genera páginas del contenido general y lista de figuras y tablas
 \tableofcontents
 \listoffigures                 
 \listoftables                  
 \input{05_Nomenclatura}
 \input{06_Simbolos}
 \input{07_Glosario}
-% %--------INCLUSIÓN DE LOS ARCHIVOS (CAPÍTULOS) DEL DOCUMENTO--------
-% % Declaración de número de páginas en números Arábigos
- \clearpage\pagenumbering{arabic}
+%--------INCLUSIÓN DE LOS ARCHIVOS (CAPÍTULOS) DEL DOCUMENTO--------
+% Declaración de número de páginas en números Arábigos
+\clearpage\pagenumbering{arabic}
 % incluye los captitulos de la tesis
 \input{Cap1}
 \input{Cap2}
 \input{Cap3}
 \input{Cap4}
 \input{Cap5}
-% % ------------------INTRODUCCIÓN DE REFERENCIAS---------------------
+% ------------------INTRODUCCIÓN DE REFERENCIAS---------------------
 \chapter*{Referencias bibliográficas}     
 \addcontentsline{toc}{chapter}{Referencias bibliográficas}
 \printbibliography[heading=none]
-% % ---------------------INTRODUCCIÓN DE APÉNDICES--------------------
+% ---------------------INTRODUCCIÓN DE APÉNDICES--------------------
 \begin{apendices}
 \input{A_apen}
 \input{B_apen}
