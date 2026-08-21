@@ -28,6 +28,37 @@ sorting=nyt
 \addbibresource{Referencias.bib}
 
 %=============================================================================
+% Lenguajes de programacion
+%=============================================================================
+
+\lstdefinelanguage{P4}{
+  keywords={
+    header,struct,parser,state,transition,
+    control,apply,action,table,key,actions,
+    default_action,const,entries,
+    extern,package,in,out,inout,
+    bit,varbit,bool,error,enum,
+    select,if,else,return,exit
+  },
+  sensitive=true,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]"
+}
+
+\lstset{ 
+  numbers=left, 
+  numberstyle=\footnotesize, 
+  numbersep=8pt, 
+  stepnumber=1, 
+  breaklines=true, 
+  % basicstyle=\ttfamily\small 
+  breaklines=true, 
+  breakatwhitespace=true, 
+  columns=fullflexible, 
+  keepspaces=true,
+}
+%=============================================================================
 % Tamaño de papel
 %=============================================================================
 \setlength\paperheight{11in}
