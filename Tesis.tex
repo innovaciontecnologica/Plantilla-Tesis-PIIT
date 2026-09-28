@@ -32,12 +32,15 @@
 \usepackage{amsmath}
 \usepackage{pgfplots} 
 \pgfplotsset{compat=1.18}
-\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{statistics, groupplots, polar}
 \usepackage{xcolor}
 \usepackage{etoolbox}
 \usepackage{threeparttable}
 \usepackage[acronym, toc, nonumberlist]{glossaries-extra}
-\newglossary[slg]{symbols}{syi}{syg}{Símbolos}
+% Glosario para símbolos latinos
+\newglossary[slg]{latin}{syi}{syg}{Simbología latina}
+% Glosario para símbolos griegos
+\newglossary[glg]{greek}{gyi}{gyg}{Simbología griega}
 \makeglossaries
 \renewcommand*{\glossaryname}{Glosario}
 \renewcommand*{\acronymname}{Nomenclatura}
@@ -105,18 +108,18 @@
 % Declaración de número de páginas en números Arábigos
 \clearpage\pagenumbering{arabic}
 % incluye los captitulos de la tesis
-\input{Cap1}
-\input{Cap2}
-\input{Cap3}
-\input{Cap4}
-\input{Cap5}
+\input{Cap_1}
+\input{Cap_2}
+\input{Cap_3}
+\input{Cap_4}
+\input{Cap_5}
 % ------------------INTRODUCCIÓN DE REFERENCIAS---------------------
 \chapter*{Referencias bibliográficas}     
 \addcontentsline{toc}{chapter}{Referencias bibliográficas}
 \printbibliography[heading=none]
 % ---------------------INTRODUCCIÓN DE APÉNDICES--------------------
 \begin{apendices}
-\input{A_apen}
-\input{B_apen}
+\input{Apen_A}
+\input{Apen_B}
 \end{apendices}
 \end{document}

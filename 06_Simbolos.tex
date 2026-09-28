@@ -1,11 +1,170 @@
-\newglossaryentry{sym-uk}{type=symbols, name={\ensuremath{u_k}}, description={Entrada de control asociada a una maniobra conocida}, user1={}, sort=uk}
-\newglossaryentry{sym-Qk}{type=symbols, name={\ensuremath{Q_k}}, description={Matriz de covarianza del ruido de proceso}, user1={}, sort=Qk}
-\newglossaryentry{sym-zk}{type=symbols, name={\ensuremath{z_k}}, description={Vector de mediciones del radar}, user1={}, sort=zk}
-\newglossaryentry{sym-Rk}{type=symbols, name={\ensuremath{R_k}}, description={Matriz de covarianza del ruido de medición}, user1={}, sort=Rk}
-\newglossaryentry{sym-h}{type=symbols, name={\ensuremath{h(\cdot)}}, description={Función de medición u observación}, user1={}, sort=h}
-\newglossaryentry{sym-f}{type=symbols, name={\ensuremath{f(\cdot)}}, description={Función de transición cinemática del blanco}, user1={}, sort=f}
-\newglossaryentry{sym-omega}{type=symbols, name={\ensuremath{\omega}}, description={Tasa de giro del blanco}, user1={rad/s}, sort=omega}
-\newglossaryentry{sym-sinr}{type=symbols, name={\ensuremath{SINR}}, description={Relación señal-interferencia-más-ruido}, user1={}, sort=SINR}
-\newglossaryentry{sym-mse}{type=symbols, name={\ensuremath{MSE}}, description={Error Cuadrático Medio}, user1={}, sort=MSE}
+\newglossaryentry{sym-B}{
+    type=latin,
+    name={\ensuremath{B}},
+    description={Ancho de banda del chirp FMCW [Hz]},
+    user1={Hz},
+    sort=B
+}
+
+\newglossaryentry{sym-c}{
+    type=latin,
+    name={\ensuremath{c}},
+    description={Velocidad de propagación de la luz en el vacío [m/s]},
+    user1={m/s},
+    sort=c
+}
+
+\newglossaryentry{sym-D}{
+    type=latin,
+    name={\ensuremath{D}},
+    description={Diámetro de la cantenna [m]},
+    user1={m},
+    sort=D
+}
+
+\newglossaryentry{sym-f0}{
+    type=latin,
+    name={\ensuremath{f_0}},
+    description={Frecuencia central de operación [Hz]},
+    user1={Hz},
+    sort=f0
+}
+
+\newglossaryentry{sym-fb}{
+    type=latin,
+    name={\ensuremath{f_b}},
+    description={Frecuencia de batido [Hz]},
+    user1={Hz},
+    sort=fb
+}
+
+\newglossaryentry{sym-fc}{
+    type=latin,
+    name={\ensuremath{f_c}},
+    description={Frecuencia de corte de la guía de onda [Hz]},
+    user1={Hz},
+    sort=fc
+}
+
+\newglossaryentry{sym-fs}{
+    type=latin,
+    name={\ensuremath{f_s}},
+    description={Frecuencia de muestreo [Hz]},
+    user1={Hz},
+    sort=fs
+}
+
+\newglossaryentry{sym-fsp}{
+    type=latin,
+    name={\ensuremath{f_s'}},
+    description={Frecuencia de muestreo después del remuestreo [Hz]},
+    user1={Hz},
+    sort=fsp
+}
+
+\newglossaryentry{sym-L}{
+    type=latin,
+    name={\ensuremath{L}},
+    description={Longitud de la cantenna [m]},
+    user1={m},
+    sort=L
+}
+
+\newglossaryentry{sym-R}{
+    type=latin,
+    name={\ensuremath{R}},
+    description={Distancia entre el radar y el objetivo [m]},
+    user1={m},
+    sort=R
+}
+
+\newglossaryentry{sym-Rhat}{
+    type=latin,
+    name={\ensuremath{\hat{R}}},
+    description={Distancia estimada al objetivo [m]},
+    user1={m},
+    sort=Rhat
+}
+
+\newglossaryentry{sym-Rff}{
+    type=latin,
+    name={\ensuremath{R_{ff}}},
+    description={Distancia mínima para operar en la región de campo lejano (región de Fraunhofer) [m]},
+    user1={m},
+    sort=Rff
+}
+
+\newglossaryentry{sym-S}{
+    type=latin,
+    name={\ensuremath{S}},
+    description={Pendiente del chirp FMCW [Hz/s]},
+    user1={Hz/s},
+    sort=S
+}
+
+\newglossaryentry{sym-Tc}{
+    type=latin,
+    name={\ensuremath{T_c}},
+    description={Duración del chirp FMCW [s]},
+    user1={s},
+    sort=Tc
+}
+
+\newglossaryentry{sym-deltaphi}{
+    type=greek,
+    name={\ensuremath{\Delta\phi[n]}},
+    description={Diferencia de fase entre muestras consecutivas [rad]},
+    user1={rad},
+    sort=deltaphi
+}
+
+\newglossaryentry{sym-lambda}{
+    type=greek,
+    name={\ensuremath{\lambda}},
+    description={Longitud de onda [m]},
+    user1={m},
+    sort=lambda
+}
+
+\newglossaryentry{sym-lambdag}{
+    type=greek,
+    name={\ensuremath{\lambda_g}},
+    description={Longitud de onda guiada [m]},
+    user1={m},
+    sort=lambdag
+}
+
+\newglossaryentry{sym-phi}{
+    type=greek,
+    name={\ensuremath{\phi[n]}},
+    description={Fase envuelta de la señal [rad]},
+    user1={rad},
+    sort=phi
+}
+
+\newglossaryentry{sym-phiu}{
+    type=greek,
+    name={\ensuremath{\phi_u[n]}},
+    description={Fase desenrollada de la señal [rad]},
+    user1={rad},
+    sort=phiu
+}
+
+\newglossaryentry{sym-sigma}{
+    type=greek,
+    name={\ensuremath{\sigma}},
+    description={Desviación estándar del error de estimación de distancia [cm]},
+    user1={cm},
+    sort=sigma
+}
+
+\newglossaryentry{sym-sigmaphi}{
+    type=greek,
+    name={\ensuremath{\sigma_{\phi}}},
+    description={Desviación estándar del error de fase [rad]},
+    user1={rad},
+    sort=sigmaphi
+}
 % Manda imprimir 
-\printunsrtglossary[type=symbols, title={Simbología}]
+\printunsrtglossary[type=latin,title={Simbología latina}]
+\printunsrtglossary[type=greek,title={Simbología griega}]
