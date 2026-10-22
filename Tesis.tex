@@ -4,7 +4,11 @@
 % -----------DECLARACIÓN DE TIPO DE DOCUMENTO A DISEÑAR-------------
 \documentclass[12pt]{uaztesis}
 % --------------DECLARACIÓN DE PAQUETES A UTILIZAR------------------
-\usepackage[spanish,mexico]{babel}
+\usepackage[spanish,mexico,english]{babel}
+% Para escoger el idioma de la tesis hay que descomentar el idioma a utilizar
+% \newcommand{\idiomaTesis}{english} % para tesis en ingles
+\newcommand{\idiomaTesis}{spanish} % para tesis es espanol
+\addto\captionsspanish{\renewcommand{\contentsname}{Contenido General}}
 \usepackage{subcaption}
 \usepackage{multirow,rotating}
 \usepackage[hidelinks]{hyperref}
@@ -38,13 +42,19 @@
 \usepackage{threeparttable}
 \usepackage[acronym, toc, nonumberlist]{glossaries-extra}
 % Glosario para símbolos latinos
-\newglossary[slg]{latin}{syi}{syg}{Simbología latina}
+\newglossary[slg]{latin}{syi}{syg}{\uazLatinSymbolsName}
 % Glosario para símbolos griegos
-\newglossary[glg]{greek}{gyi}{gyg}{Simbología griega}
+\newglossary[glg]{greek}{gyi}{gyg}{\uazGreekSymbolsName}
 \makeglossaries
-\renewcommand*{\glossaryname}{Glosario}
-\renewcommand*{\acronymname}{Nomenclatura}
-\renewcommand\listingscaption{C\'odigo}
+\addto\captionsspanish{%
+  \renewcommand*{\glossaryname}{\uazGlossaryName}%
+  \renewcommand*{\acronymname}{\uazNomenclatureName}%
+}
+\addto\captionsenglish{%
+  \renewcommand*{\glossaryname}{\uazGlossaryName}%
+  \renewcommand*{\acronymname}{\uazNomenclatureName}%
+}
+\renewcommand\listingscaption{\uazCodeName}
 \numberwithin{listing}{chapter}
 % --DECLARACIÓN DE RUTA DE CARPETA DONDE SE ENCUENTRAN LAS FIGURAS--
 \graphicspath{{Imagenes/}}
@@ -57,9 +67,10 @@
 % INICIA EL CONTENIDO DEL DOCUMENTO
 % ===================================================================
 \begin{document}
+\selectlanguage{\idiomaTesis}
 \sloppy
-% \thesism % Tesis de maestria
-\thesisd % Tesis de doctorado
+\thesism % Tesis de maestria
+% \thesisd % Tesis de doctorado
 % \thesis % Tesis licenciatura
 % \degree{Ingeniero en Robótica y Mecatrónica} % Solo para licenciatura
 % Introducción en sílabas de palabras desconocidas por LaTeX
@@ -114,8 +125,8 @@
 \input{Cap_4}
 \input{Cap_5}
 % ------------------INTRODUCCIÓN DE REFERENCIAS---------------------
-\chapter*{Referencias bibliográficas}     
-\addcontentsline{toc}{chapter}{Referencias bibliográficas}
+\chapter*{\uazReferencesName}
+\addcontentsline{toc}{chapter}{\uazReferencesName}
 \printbibliography[heading=none]
 % ---------------------INTRODUCCIÓN DE APÉNDICES--------------------
 \begin{apendices}

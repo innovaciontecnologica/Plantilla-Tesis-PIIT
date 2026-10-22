@@ -27,6 +27,33 @@ sorting=nyt
 ]{biblatex}
 \addbibresource{Referencias.bib}
 
+\newcommand{\uazContentsName}{\contentsname}
+\newcommand{\uazListFiguresName}{\iflanguage{english}{List of Figures}{Lista de figuras}}
+\newcommand{\uazListTablesName}{\iflanguage{english}{List of Tables}{Lista de tablas}}
+\newcommand{\uazFigureName}{\iflanguage{english}{Figure}{Figura}}
+\newcommand{\uazTableName}{\iflanguage{english}{Table}{Tabla}}
+\newcommand{\uazPageName}{\iflanguage{english}{Page}{Pág.}}
+\newcommand{\uazCodeName}{\iflanguage{english}{Code}{Código}}
+\newcommand{\uazAppendixName}{\iflanguage{english}{Appendix}{Apéndice}}
+\newcommand{\uazAppendicesName}{\iflanguage{english}{Appendices}{Apéndices}}
+\newcommand{\uazGlossaryName}{\iflanguage{english}{Glossary}{Glosario}}
+\newcommand{\uazNomenclatureName}{\iflanguage{english}{Nomenclature}{Nomenclatura}}
+\newcommand{\uazSymbolsName}{\iflanguage{english}{List of Symbols}{Simbología}}
+\newcommand{\uazLatinSymbolsName}{\iflanguage{english}{Latin Symbols}{Simbología latina}}
+\newcommand{\uazGreekSymbolsName}{\iflanguage{english}{Greek Symbols}{Simbología griega}}
+\newcommand{\uazDedicationName}{\iflanguage{english}{Dedication}{Dedicatoria}}
+\newcommand{\uazAcknowledgmentsName}{\iflanguage{english}{Acknowledgments}{Agradecimientos}}
+\newcommand{\uazReferencesName}{\iflanguage{english}{References}{Referencias bibliográficas}}
+\newcommand{\uazThesisUndergraduateName}{\iflanguage{english}{Undergraduate Thesis}{Tesis de Licenciatura}}
+\newcommand{\uazThesisMastersName}{\iflanguage{english}{Master's Thesis}{Tesis de Maestría}}
+\newcommand{\uazThesisDoctoralName}{\iflanguage{english}{Doctoral Thesis}{Tesis de Doctorado}}
+\newcommand{\uazMastersDegreeName}{\iflanguage{english}{Master of Engineering in Technological Innovation}{Maestro en Ingeniería para la Innovación Tecnológica}}
+\newcommand{\uazDoctoralDegreeName}{\iflanguage{english}{Doctor of Engineering in Technological Innovation}{Doctor en Ingeniería para la Innovación Tecnológica}}
+\newcommand{\uazDepartmentName}{\iflanguage{english}{Academic Unit of Electrical Engineering}{Unidad Académica de Ingeniería Eléctrica}}
+\newcommand{\uazSubmissionText}{\iflanguage{english}{submitted to the}{presentada a la}}
+\newcommand{\uazDegreeRequirementText}{\iflanguage{english}{in partial fulfillment of the requirements of the University for the degree of}{de acuerdo a los requerimientos de la Universidad para obtener el título de}}
+\newcommand{\uazAdvisorsName}{\iflanguage{english}{Thesis Advisors}{Directores de tesis}}
+
 %=============================================================================
 % Lenguajes de programacion
 %=============================================================================
@@ -394,15 +421,15 @@ sorting=nyt
 % the chapter.  Isn't elegance wonderful?
 %
 %=============================================================================
-\def\tableofcontents{\@tableof{Contenido General}{}{tocpage}{toc}{}}
+\def\tableofcontents{\@tableof{\uazContentsName}{}{tocpage}{toc}{}}
 
 \def\listoffigures{
-  \@tableof{Lista de figuras}{Figura}{lofpage}{lof}
-  {\protect\addcontentsline{toc}{chapter}{Lista de figuras}}}
+  \@tableof{\uazListFiguresName}{\uazFigureName}{lofpage}{lof}
+  {\protect\addcontentsline{toc}{chapter}{\uazListFiguresName}}}
 
 \def\listoftables{
-  \@tableof{Lista de tablas}{Tabla}{lotpage}{lot}
-  {\protect\addcontentsline{toc}{chapter}{Lista de tablas}}}
+  \@tableof{\uazListTablesName}{\uazTableName}{lotpage}{lot}
+  {\protect\addcontentsline{toc}{chapter}{\uazListTablesName}}}
 
 \def\@tableof#1#2#3#4#5{
 { % limit scope of following declarations!!
@@ -415,7 +442,7 @@ sorting=nyt
   \chapter*{#1}
   #5
   \relax\markboth{#1}{#1}
-  \hbox to \hsize{#2 \hfil Pág.}
+  \hbox to \hsize{#2 \hfil \uazPageName}
   \singlespace
   \setcounter{#3}{0}
   \setcounter{listofheading}{1}  % change from 0 to 1 by mccauley, 14may93
@@ -426,7 +453,7 @@ sorting=nyt
 %        \hbox to \hsize{Apéndice\hfil} \vspace{4pt} \fi
       \ifnum\value{listofheading}=1
         \stepcounter{listofheading} \fi
-      \hbox to \hsize{#2 \hfil Pág.}
+      \hbox to \hsize{#2 \hfil \uazPageName}
     \else
       \setcounter{#3}{1}
     \fi}}
@@ -437,7 +464,7 @@ sorting=nyt
 %        \hbox to \hsize{Apéndice\hfil} \vspace{4pt} \fi
       \ifnum\value{listofheading}=1
         \stepcounter{listofheading} \fi
-      \hbox to \hsize{#2 \hfil Pág.}
+      \hbox to \hsize{#2 \hfil \uazPageName}
     \else
       \setcounter{#3}{1}
     \fi}}
@@ -469,7 +496,7 @@ sorting=nyt
 %   \altbibtitle has been added to change the chapter title.
 %   This command does nothing more than change REFERENCES to BIBLIOGRAPHY
 %============================================================================
-\def\@bibchaptitle{Referencias}
+\def\@bibchaptitle{\uazReferencesName}
 %\def\altbibtitle{\def\@bibchaptitle{Bibliografía}}
 \def\thebibliography#1{
   %\separatorpage{\@bibchaptitle}
@@ -662,7 +689,7 @@ sorting=nyt
 \def\fps@figure{tbp}
 \def\ftype@figure{1}
 \def\ext@figure{lof}
-\def\fnum@figure{\small{Figura} \thefigure}
+\def\fnum@figure{\small{\uazFigureName} \thefigure}
 \def\figure{\@float{figure}}
 \def\endfigure{\end@float} 
 \@namedef{figure*}{\@dblfloat{figure}}
@@ -676,7 +703,7 @@ sorting=nyt
 \def\fps@table{tbp}
 \def\ftype@table{2}
 \def\ext@table{lot}
-\def\fnum@table{\small{Tabla} \thetable}
+\def\fnum@table{\small{\uazTableName} \thetable}
 \def\table{\@float{table}}
 \def\endtable{\end@float}
 \@namedef{table*}{\@dblfloat{table}}
@@ -694,7 +721,7 @@ sorting=nyt
 %\let\endcode\end@float
 %\@namedef{code*}{\@dblfloat{code}}
 %\@namedef{endcode*}{\end@dblfloat}
-\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistingname}{\uazCodeName}
 %=============================================================================
 % PÁGINA DE PRESENTACIÓN
 %=============================================================================
@@ -713,16 +740,16 @@ sorting=nyt
 \newcommand\@thesistitlemedskip{0.25in}
 \newcommand\@thesistitlebigskip{0.6in}
 \newcommand{\degree}[1]{\gdef\@degree{#1}}
-\newcommand{\thesis}{\gdef\@doctype{Tesis de Licenciatura}}
-\newcommand{\thesism}{\gdef\@doctype{Tesis de Maestría}\gdef\@degree{Maestro en Ingeniería para la Innovación Tecnológica}}
-\newcommand{\thesisd}{\gdef\@doctype{Tesis de Doctorado}\gdef\@degree{Doctor en Ingeniería para la Innovación Tecnológica}}
+\newcommand{\thesis}{\gdef\@doctype{\uazThesisUndergraduateName}}
+\newcommand{\thesism}{\gdef\@doctype{\uazThesisMastersName}\gdef\@degree{\uazMastersDegreeName}}
+\newcommand{\thesisd}{\gdef\@doctype{\uazThesisDoctoralName}\gdef\@degree{\uazDoctoralDegreeName}}
 \newcommand{\department}[1]{\gdef\@department{(#1)}}
 
-\gdef\@department{Unidad Académica de Ingeniería 
-Eléctrica} 
+\gdef\@department{\uazDepartmentName}
 
 \newcommand{\maketitle}{%
   \begin{titlepage}
+    \selectlanguage{spanish}
     \begin{center}
     {\Large\bf\expandafter\uppercase\expandafter{UNIVERSIDAD 
     AUTÓNOMA DE ZACATECAS}}\\
@@ -738,18 +765,17 @@ Eléctrica}
       \vfill
       \@doctype\ \\
       \vfill
-      presentada a la \@department \\
-      de acuerdo a los requerimientos de la Universidad 
-      para obtener el título de \\
+      \uazSubmissionText\ \@department \\
+      \uazDegreeRequirementText \\
       \vfill
       {\bf\expandafter\uppercase\expandafter{\@degree}} \\
       \vfill
-      \small{Directores de tesis: \\ 
+      \small{\uazAdvisorsName: \\
       \@advisortitle\ \@advisorname\ \\ 
       \@gradosegundoasesor\ \@nombresegundoasesor\ \\
       \@gradotercerasesor\ \@nombretercerasesor\ }\\
       \vfill
-      \small{UNIDAD ACADÉMICA DE INGENIERÍA ELÉCTRICA \\
+      \small{\MakeUppercase{\uazDepartmentName} \\
       \vspace*{8pt}
       Zacatecas, Zac.,} \@date \\
     \end{center}
@@ -1113,12 +1139,12 @@ Eléctrica}
 \def\apendices{
   \addtocontents{toc}{
     \protect\addvspace{\@tocchapterskip}
-    \hbox to \hsize{\bface Apéndices \hfil}
+    \hbox to \hsize{\bface \uazAppendicesName \hfil}
     \protect\addvspace{\@tocchapterskip}}
-  \@appendix{Apéndices}
+  \@appendix{\uazAppendicesName}
   \def\@chaptername##1{##1}
   \def\@chapstyle{apendices}
-  \def\@chapnumber{Apéndice\ \thechapter:}
+  \def\@chapnumber{\uazAppendixName\ \thechapter:}
   \let\@chapterhead\@appendiceschapterhead
   \let\@schapterhead\@apendiceschapterhead
   % \if@bibpresent\relax \else \separatorpage{}\fi % This
@@ -1139,20 +1165,20 @@ Eléctrica}
   \addtocontents{lot}{
     \protect\stepcounter{listofheading}
     \protect\addvspace{\@tocchapterskip}
-    \hbox to \hsize{Apéndice \hfil}
-    \hbox to \hsize{Tabla \hfil}}}
+    \hbox to \hsize{\uazAppendixName \hfil}
+    \hbox to \hsize{\uazTableName \hfil}}}
 \def\@lofheading{
   \addtocontents{lof}{
     \protect\stepcounter{listofheading}
     \protect\addvspace{\@tocchapterskip}
-    \hbox to \hsize{Apéndice \hfil}
-    \hbox to \hsize{Figura \hfil}}}
+    \hbox to \hsize{\uazAppendixName \hfil}
+    \hbox to \hsize{\uazFigureName \hfil}}}
 
 \def\@appendix#1{\par
   \addtocontents{toc}{{\protect\setcounter{tocdepth}{0}}}
   \setcounter{chapter}{0}
   \setcounter{section}{0}
-  \def\@chapapp{APPENDIX}
+  \def\@chapapp{\uazAppendixName}
   \def\thechapter{\Alph{chapter}}
   \@lotheading
   \@lofheading
@@ -1187,8 +1213,8 @@ Eléctrica}
 %   (2" abajo del márgen superior) y el texto correspondiente
 %=============================================================================
 \def\glosario{
-  \chapter*{Glosario}
-  \addcontentsline{toc}{chapter}{Glosario}}
+  \chapter*{\uazGlossaryName}
+  \addcontentsline{toc}{chapter}{\uazGlossaryName}}
 \def\endglosario{\par\newpage}
 
 %=============================================================================
@@ -1200,8 +1226,8 @@ Eléctrica}
 %   (2" abajo del márgen superior) y el texto correspondiente
 %=============================================================================
 \def\nomenclatura{ %\separatorpage{DISCARD THIS PAGE}
-  \chapter*{Nomenclatura}
-  \addcontentsline{toc}{chapter}{Nomenclatura}}
+  \chapter*{\uazNomenclatureName}
+  \addcontentsline{toc}{chapter}{\uazNomenclatureName}}
 \def\endnomenclatura{\par\newpage}
 %=============================================================================
 % LISTA DE SIMBOLOS
@@ -1212,8 +1238,8 @@ Eléctrica}
 %   (2" abajo del márgen superior) y el texto correspondiente
 %=============================================================================
 \def\listofsymbols{ %\separatorpage{DISCARD THIS PAGE}
-  \chapter*{Simbología}
-  \addcontentsline{toc}{chapter}{Simbología}}
+  \chapter*{\uazSymbolsName}
+  \addcontentsline{toc}{chapter}{\uazSymbolsName}}
 \def\endlistofsymbols{\par\newpage}
 
 %=============================================================================
@@ -1239,7 +1265,7 @@ Eléctrica}
 % - coloca el texto en ambiente centrado
 %=============================================================================
 \def\dedicatoria{
-  \chapter*{Dedicatoria}
+  \chapter*{\uazDedicationName}
   \doublespace}
 \def\endadedicatoria{\par\newpage}
 %=============================================================================
@@ -1251,7 +1277,7 @@ Eléctrica}
 %   en forma de capítulo 
 %=============================================================================
 \def\agradecimientos{
-  \chapter*{Agradecimientos}
+  \chapter*{\uazAcknowledgmentsName}
   \doublespace}
 \def\endaagradecimientos{\par\newpage}
 
