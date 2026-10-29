@@ -5,9 +5,6 @@
 \documentclass[12pt]{uaztesis}
 % --------------DECLARACIÓN DE PAQUETES A UTILIZAR------------------
 \usepackage[spanish,mexico,english]{babel}
-% Para escoger el idioma de la tesis hay que descomentar el idioma a utilizar
-% \newcommand{\idiomaTesis}{english} % para tesis en ingles
-\newcommand{\idiomaTesis}{spanish} % para tesis es espanol
 \addto\captionsspanish{\renewcommand{\contentsname}{Contenido General}}
 \usepackage{subcaption}
 \usepackage{multirow,rotating}
@@ -67,7 +64,9 @@
 % INICIA EL CONTENIDO DEL DOCUMENTO
 % ===================================================================
 \begin{document}
-\selectlanguage{\idiomaTesis}
+% Para escoger el idioma de la tesis hay que descomentar el idioma a utilizar
+% \selectlanguage{english} % para tesis en ingles
+\selectlanguage{spanish} % para tesis es espanol
 \sloppy
 \thesism % Tesis de maestria
 % \thesisd % Tesis de doctorado
