@@ -32,7 +32,12 @@
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{pgfplots} 
-\pgfplotsset{compat=1.18}
+\pgfplotsset{compat=1.18, every axis/.append style={
+    tick label style={font=\footnotesize},
+    label style={font=\small},
+    legend style={font=\footnotesize},
+    title style={font=\small}
+}}
 \usepgfplotslibrary{statistics, groupplots, polar}
 \usepackage{xcolor}
 \usepackage{etoolbox}

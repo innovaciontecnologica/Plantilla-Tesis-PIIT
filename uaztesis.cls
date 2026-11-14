@@ -442,6 +442,8 @@ sorting=nyt
   \chapter*{#1}
   #5
   \relax\markboth{#1}{#1}
+  % Conservar el idioma del índice también en los encabezados de babel.
+  \edef\uaz@listlanguage{\languagename}
   \hbox to \hsize{#2 \hfil \uazPageName}
   \singlespace
   \setcounter{#3}{0}
@@ -453,7 +455,7 @@ sorting=nyt
 %        \hbox to \hsize{Apéndice\hfil} \vspace{4pt} \fi
       \ifnum\value{listofheading}=1
         \stepcounter{listofheading} \fi
-      \hbox to \hsize{#2 \hfil \uazPageName}
+      \hbox to \hsize{\foreignlanguage{\uaz@listlanguage}{#2 \hfil \uazPageName}}
     \else
       \setcounter{#3}{1}
     \fi}}
@@ -464,7 +466,7 @@ sorting=nyt
 %        \hbox to \hsize{Apéndice\hfil} \vspace{4pt} \fi
       \ifnum\value{listofheading}=1
         \stepcounter{listofheading} \fi
-      \hbox to \hsize{#2 \hfil \uazPageName}
+      \hbox to \hsize{\foreignlanguage{\uaz@listlanguage}{#2 \hfil \uazPageName}}
     \else
       \setcounter{#3}{1}
     \fi}}
@@ -1356,3 +1358,4 @@ sorting=nyt
 %=============================================================================
 % FIN DEL ARCHIVO
 %=============================================================================
+
